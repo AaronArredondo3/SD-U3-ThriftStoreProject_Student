@@ -54,7 +54,33 @@ const salesTax = [
 ];
 
 //! Classes
+class Store {
+    constructor(name, city, state, salesTax) {
+        this.name = name;
+        this.location = {
+            city: city,
+            state: state,
+        };
+        this.salesTax = salesTax;
+        this.inventory = [];
+        this.balance = 100;
+        this.expenses = 0;
+        this.profit = 0;
+        this.paidTax = 0;
+    }
+}
 
+
+class Product {
+    constructor(upc, name, type, purchasePrice, quantity = 1) {
+        this.upc = upc;
+        this.name = name;
+        this.type = type;
+        this.purchasePrice = purchasePrice;
+        this.quantity = quantity;
+        this.marketPrice = 0;
+    }
+}
 
 //! CREATE STORES
 // Generate 3 different stores, each in a different state.

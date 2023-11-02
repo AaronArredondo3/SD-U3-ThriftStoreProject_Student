@@ -1,5 +1,22 @@
 # The Thrift Store
-You're in charge of setting up the inventory base for a thrift store chain. Each location will need a unique name tied to it for marketing purposes. *Don't worry, marketing isn't in your department, but should be at least a data point that is accessible*. 
+You're in charge of setting up the inventory base for a thrift store chain. Each location will need a unique name tied to it for ma Show that you have tested:
+      1. Trying to sell an item that doesn't have enough in stock.
+      2. Trying to sell an item that is less than the quantity desired.
+6. Within the **Testing** area of the file (bottom of the document), `console.log` each store.
+
+---
+## Points of Interest
+There are comments set within the document to note where certain actions are expected to take place.
+   - ex: classes should be written at the top of the file.
+
+Wherever you see a point that denotes 
+```js 
+//* First Store
+//* Second Store
+//* Third Store
+```
+You will place your actions for that store there.
+   - ex: If you were to sell an item from the second store you created, place that action between the `Second Store` and `Third Store` comments.rketing purposes. *Don't worry, marketing isn't in your department, but should be at least a data point that is accessible*. 
 
 These stores are all over the country but you are only in charge of setting up three (3) different locations in three (3) different states.
 
@@ -67,12 +84,12 @@ This can be any type of item that you'd like. This is a thrift store after all.
 
 It will need:
 - A **upc**
-  - This can be a simple whole number that is unique to it. Feel free to use 1,2,3,etc. however, each created item should represent either as a new type or will be consdiered to update a quantity.
+  - This can be a simple whole number that is unique to it. Feel free to use 1,2,3,etc. however, each created item should represent either as a new type or will be considered to update a quantity.
   - example: A variable will hold the new object. The details of that object will be associated within the `new` Product. If an item has a upc of "1" and the type is "spoon", then any other object created with a upc of "1" will also be a type "spoon". The variable name may be referenced differently within the project to associate individual objects.
 
 ```
 example: 
-A spoon may have a upc of "20". If another spoon is added, it shoudl have the same upc; however, a fork would be a different upc.
+A spoon may have a upc of "20". If another spoon is added, it should have the same upc; however, a fork would be a different upc.
 ```
 - A **name**
   - This will detail what it is. (ex: "spoon")
@@ -100,21 +117,3 @@ addToInventory(obj, 0.5) // represents the product and a 50% markup.
 3. Create at least 2 items with more than 1 as their quantity.
 4. Stock each store with at least 3 items each.
 5. Sell at least 1 item from each store.
-   1. Show that you have tested:
-      1. Trying to sell an item that doesn't have enough in stock.
-      2. Trying to sell an item that is less than the quantity desired.
-6. Within the **Testing** area of the file (bottom of the document), `console.log` each store.
-
----
-## Points of Interest
-There are comments set within the document to note where certain actions are expected to take place.
-   - ex: classes should be written at the top of the file.
-
-Wherever you see a point that denotes 
-```js 
-//* First Store
-//* Second Store
-//* Third Store
-```
-You will place your actions for that store there.
-   - ex: If you were to sell an item from the second store you created, place that action between the `Second Store` and `Third Store` comments.
