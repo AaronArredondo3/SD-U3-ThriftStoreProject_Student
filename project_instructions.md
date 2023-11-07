@@ -1,6 +1,6 @@
 # The Thrift Store
 You're in charge of setting up the inventory base for a thrift store chain. Each location will need a unique name tied to it for ma Show that you have tested:
-      1. Trying to sell an item that doesn't have enough in stock.
+      1. Trying to sell an item that doesn't have enough in stock. -DOne
       2. Trying to sell an item that is less than the quantity desired.
 6. Within the **Testing** area of the file (bottom of the document), `console.log` each store.
 
@@ -16,7 +16,7 @@ Wherever you see a point that denotes
 //* Third Store
 ```
 You will place your actions for that store there.
-   - ex: If you were to sell an item from the second store you created, place that action between the `Second Store` and `Third Store` comments.rketing purposes. *Don't worry, marketing isn't in your department, but should be at least a data point that is accessible*. 
+   - ex: If you were to sell an item from the second store you created, place that action between the `Second Store` and `Third Store` comments.marketing purposes. *Don't worry, marketing isn't in your department, but should be at least a data point that is accessible*. 
 
 These stores are all over the country but you are only in charge of setting up three (3) different locations in three (3) different states.
 
@@ -111,9 +111,9 @@ addToInventory(obj, 0.5) // represents the product and a 50% markup.
 
 ---
 # Project Requirements
-1. Create 3 different Stores in 3 different states.
-2. Create at least 3 items with the same upc.
-   1. One store should be holding these three different items.
-3. Create at least 2 items with more than 1 as their quantity.
-4. Stock each store with at least 3 items each.
-5. Sell at least 1 item from each store.
+1. Create 3 different Stores in 3 different states. - Done
+2. Create at least 3 items with the same upc. - Done
+   1. One store should be holding these three different items. -Done
+3. Create at least 2 items with more than 1 as their quantity.- Done
+4. Stock each store with at least 3 items each. -done
+5. Sell at least 1 item from each store.- Done

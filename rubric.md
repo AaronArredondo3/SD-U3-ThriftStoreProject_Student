@@ -38,7 +38,7 @@ This will consider the overall build of the Product class. Does the `constructor
   - Products have the associated key/value pairs when constructed.
 
 ### Object Creation
-Are the correct amount of stores and items being creation? Each store has the expected amount of items per the instructions.
+Are the correct amount of stores and items being created? Each store has the expected amount of items per the instructions.
   - Noted amount of store and products have been created.
   - Products have been associated with stores.
 
