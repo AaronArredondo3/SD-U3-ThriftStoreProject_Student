@@ -67,6 +67,7 @@ class Product {
     // Method to set the market price with markup
     setMarketPrice(markup) {
       this.marketPrice = this.purchasePrice * (1 + markup);
+      this.marketPrice = parseFloat(this.marketPrice.toFixed(2))
     }
 }
 
@@ -101,6 +102,7 @@ class Store {
 
     // Method to add items to inventory
     addItemToInventory(product, markup) {
+      
       // Check if the store has enough balance to purchase
     if (this.balance < product.purchasePrice) {
         console.log(`Not enough balance to purchase ${product.name}`);
@@ -127,9 +129,7 @@ class Store {
         console.log(`Item ${product.name} is not in the inventory.`);
         return;
     }
-
     const item = this.inventory[itemIndex];
-
     if (item.quantity < quantity) {
         console.log(`Not enough ${product.name} in stock to sell.`);
         return;
@@ -138,22 +138,23 @@ class Store {
       // Calculate the sale value and update store's balance
       const saleValue = item.marketPrice * quantity;
     this.balance += saleValue;
+    this.balance = parseFloat(this.balance.toFixed(2));
 
       // Calculate tax and update paid tax
       const taxAmount = saleValue * this.salesTax;
     this.paidTax += taxAmount;
+    this.paidTax = parseFloat(this.paidTax.toFixed(2));
 
-      // Update profit and expenses
+    // Update profit and expenses
       this.profit += saleValue - (item.purchasePrice * quantity);
+      this.profit = parseFloat(this.profit.toFixed(2));
       this.expenses += item.purchasePrice * quantity;
+      this.expenses = parseFloat(this.expenses.toFixed(2));
 
       // Update the inventory quantity
     item.quantity -= quantity;
     }
 }
-
-
-
 
 //! CREATE STORES
 // Generate 3 different stores, each in a different state.
@@ -161,24 +162,23 @@ const store1 = Store.createStore('Jeans and More', 'Los Angeles', 'California');
 
 const store2 = Store.createStore('Metal Utensils', 'Topeka', 'Kansas');
 
-const store3 = Store.createStore('The BookShelf', 'Burlington', 'Vermont');
+const store3 = Store.createStore('World of Toys', 'Burlington', 'Vermont');
 //! Inventory
-const product1 = new Product(1, 'Jeans', 'Clothing', 4.1, 1);
-const product2 = new Product(2, 'Shirt', 'Clothing', 4.5, 7);
-const product3 = new Product(3, 'Shorts', 'Clothing', 4.1, 5);
-const product4 = new Product(4, 'Fork', 'Kitchenware', 1.2, 5);
-const product5 = new Product(5, 'Spoon', 'Kitchenware', 1.1, 5);
-const product6 = new Product(6, 'Knife', 'Kitchenware', 1.7, 5);
-const product7 = new Product(7, 'Doll', 'Toys', 3.2, 3);
-const product8 = new Product(7, 'Car', 'Toys', 3.2, 4);
-const product9 = new Product(7, 'Action Figures', 'Toys', 3.5, 2);
+const product1 = new Product(1, 'Jeans', 'Clothing', 12.99, 1);
+const product2 = new Product(2, 'Shirt', 'Clothing', 8.5, 8);
+const product3 = new Product(3, 'Shorts', 'Clothing', 7.25, 6);
+const product4 = new Product(4, 'Fork', 'Kitchenware', 1.75, 10);
+const product5 = new Product(2, 'Spoon', 'Kitchenware', 1.5, 10);
+const product6 = new Product(6, 'Knife', 'Kitchenware', 2.7, 12);
+const product7 = new Product(7, 'Doll', 'Toys', 6.25, 3);
+const product8 = new Product(3, 'Car', 'Toys', 8.25, 4);
+const product9 = new Product(8, 'Action Figures', 'Toys', 6.5, 13);
 
 //! Stocking
-
 //* First Store
-store1.addItemToInventory(product1, 0.1,);
-store1.addItemToInventory(product2, 0.16);
-store1.addItemToInventory(product3, 0.1);
+store1.addItemToInventory(product1, 0.55,);
+store1.addItemToInventory(product2, 0.36);
+store1.addItemToInventory(product3, 0.35);
 
 //* Second Store
 store2.addItemToInventory(product4, 0.16);
@@ -189,16 +189,24 @@ store2.addItemToInventory(product6, 0.19);
 store3.addItemToInventory(product7, 0.2);
 store3.addItemToInventory(product8, 0.15);
 store3.addItemToInventory(product9, 0.24);
+
 //! Selling
 
 //* First Store
-store1.sellItem(product1, 5);
+store1.sellItem(product1, 2);
+store1.sellItem(product2, 4);
+store1.sellItem(product3, 3);
 
 //* Second Store
-store2.sellItem(product5, 3);
+store2.sellItem(product5, 8);
+store2.sellItem(product6, 6);
+store2.sellItem(product7, 5);
 
 //* Third Store
-store3.sellItem(product9, 2);
+store3.sellItem(product7, 2);
+store3.sellItem(product8, 4);
+store3.sellItem(product9, 6);
+
 
 //! Testing
 /* 
